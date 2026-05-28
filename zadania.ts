@@ -196,3 +196,218 @@
 //     } else return string
 
 // }
+
+// zadanie 12
+// Insert in String
+// Write a JavaScript function to insert a string within a string at a particular position (default is 1).
+// Test Data :
+// console.log(insert('We are doing some exercises.'));
+// console.log(insert('We are doing some exercises.','JavaScript '));
+// console.log(insert('We are doing some exercises.','JavaScript ',18));
+// "We are doing some exercises."
+// "JavaScript We are doing some exercises."
+// "We are doing some JavaScript exercises."
+
+
+// problem z zerem
+
+
+// function insert(string: string, additionalString?: string, position?: number) {
+
+//     let newString
+
+
+//     if (additionalString === undefined) {
+//         newString = string
+//     } else if (position === undefined || position == 0) {
+//         newString = additionalString + string
+//     } else if (additionalString === undefined && position === undefined) {
+//         newString = string
+//     } else {
+//         newString = string.slice(0, position) + additionalString + string.slice(position)
+//     }
+
+
+//     console.log(newString)
+
+// }
+
+// zadanie 13
+// Chop String into Chunks
+// Write a JavaScript function to chop a string into chunks of a given length.
+// Test Data :
+// console.log(string_chop('w3resource'));
+// console.log(string_chop('w3resource',2));
+// console.log(string_chop('w3resource',3));
+// ["w3resource"]
+// ["w3", "re", "so", "ur", "ce"]
+// ["w3r", "eso", "urc", "e"]
+
+// function string_chop(string: string, size?: number) {
+
+//     // if (size === undefined) {
+//     //     size = 0
+//     // }
+
+//     let nowaTablica = string.split('')
+//     let docelowaTablica = []
+
+//     for (size; nowaTablica.length > 0;) {
+
+//         let część = nowaTablica.splice(0, size).join('')
+//         docelowaTablica.push(część)
+//     }
+
+//     return docelowaTablica
+
+// }
+
+// zadanie 14
+// List Object Properties
+// Write a JavaScript program to list the properties of a JavaScript object.
+// Sample object:
+// var student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12 };
+// Sample Output: name,sclass,rollno
+
+
+// let result = Object.keys(student).join()
+
+// zadanie 15
+// Delete Property
+// Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+// Sample object:
+// var student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12 };
+
+// console.log(student)
+// delete student['rollno']
+// console.log(student)
+
+// zadanie 16
+// Write a JavaScript program to get the length of a JavaScript object.
+// Sample object :
+// var student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12 };
+
+// let objectSize = Object.keys(student).length
+
+// console.log(objectSize)
+
+// zadanie 17
+// Display Reading Status
+// Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+// var library = [
+//     {
+//         author: 'Bill Gates',
+//         title: 'The Road Ahead',
+//         readingStatus: true
+//     },
+//     {
+//         author: 'Steve Jobs',
+//         title: 'Walter Isaacson',
+//         readingStatus: true
+//     },
+//     {
+//         author: 'Suzanne Collins',
+//         title: 'Mockingjay: The Final Book of The Hunger Games',
+//         readingStatus: false
+//     }];
+
+
+// function reading (readingStatus: boolean) {
+//     let status
+
+//     if (readingStatus) {
+//         status = library.filter(book => book.readingStatus)
+//     } else {
+//         status = library.filter(book => book.readingStatus === false)
+//     }
+//     return console.log(status)
+
+// }
+
+// reading(true)
+
+// zadanie 18
+// Book and Ebook Classes with Price
+// Write a JavaScript program that creates a class `Book` with properties for title, author, and publication year. Include a method to display book details. Create a subclass called 'Ebook' that inherits from the 'Book' class and includes an additional property for book price. Override the display method to include the book price. Create an instance of the 'Ebook' class and display its details.
+
+// class Book {
+
+//     title: string
+//     author: string
+//     publicationYear: number
+
+//     constructor(title: string, author: string, publicationYear: number) {
+
+//         this.title = title
+//         this.author = author
+//         this.publicationYear = publicationYear
+
+//     }
+
+//     displayBookDetails() {
+//         console.log('title: ' + this.title + ', author: ' + this.author + ', publication year: ' + this.publicationYear)
+//     }
+
+// }
+
+// class Ebook extends Book {
+
+//     price: number
+
+//     constructor(title: string, author: string, publicationYear: number, price: number) {
+//         super(title, author, publicationYear)
+//         this.price = price
+//     }
+
+//     displayBookDetails() {
+//         console.log('title: ' + this.title + ', author: ' + this.author + ', publication year: ' + this.publicationYear + ', price: ' + this.price)
+//     }
+
+// }
+
+// let book1 = new Ebook('Wiedźmin', 'Sapkowski', 1999, 90.99)
+// book1.displayBookDetails()
+
+// zadanie 19
+// Animal and Dog Classes with Sound
+// Write a JavaScript program that creates a class called 'Animal' with properties for species and sound. Include a method to make the animal's sound. Create a subclass called 'Dog' that inherits from the 'Animal' class and adds an additional property for color. Override the make sound method to include the dog's color. Create an instance of the 'Dog' class and make it make its sound.
+
+// class Animal {
+//     species: string
+//     sound: string
+
+//     constructor (species: string, sound: string) {
+//         this.species = species
+//         this.sound = sound
+//     }
+
+//     makeSound() {
+//         console.log('The animal is making noises.')
+//     }
+// }
+
+// class Dog extends Animal {
+//     color: string
+
+//     constructor(species: string, sound: string, color: string) {
+//         super(species, sound)
+//         this.color = color
+//     }
+
+//     makeSound() {
+//         console.log("The " + this.color + " dog is barking.")
+//     }
+// }
+
+// let dog1 = new Dog ('Affenpinscher', 'barking', 'brown')
+// dog1.makeSound()
+
