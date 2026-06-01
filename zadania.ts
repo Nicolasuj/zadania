@@ -320,8 +320,9 @@
 //         readingStatus: false
 //     }];
 
+// wariant 1 - filter()
 
-// function reading (readingStatus: boolean) {
+// function reading(readingStatus: boolean) {
 //     let status
 
 //     if (readingStatus) {
@@ -334,6 +335,48 @@
 // }
 
 // reading(true)
+
+// wariant 2 - funkcja, if, pętla, odczytywanie z tablicy, porównywanie wartości, push()
+
+// function newReading(readingStatus: boolean) {
+
+//     let results: any[] = [];
+
+//     if (readingStatus) {
+//         for (let i = 0; i < library.length; i++) {
+//             if (library[i].readingStatus) {
+//                 results.push(library[i])
+//             }
+//         }
+
+//     } else {
+//         for (let i = 0; i < library.length; i++) {
+//             if (library[i].readingStatus === false) {
+//                 results.push(library[i])
+//             }
+//         }
+//     }
+
+//     return console.log(results)
+// }
+
+// newReading(true)
+
+// wariant 3 - forEach, odczytywanie z tablicy, porównywanie wartości
+
+// function newReading2(readingStatus: boolean) {
+
+//     library.forEach(object => {
+
+//         if (object.readingStatus === readingStatus) {
+//             console.log(object)
+//         }
+
+//     })
+
+// }
+
+// newReading2(false)
 
 // zadanie 18
 // Book and Ebook Classes with Price
